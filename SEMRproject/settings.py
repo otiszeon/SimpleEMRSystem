@@ -88,7 +88,12 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 
 # Modify CsP to all unsafe-eval
-CSP_SCRIPT_SRC = ("'self'", "'unsafe-eval'")
+# CSP_SCRIPT_SRC = ("'self'", "'unsafe-eval'")
+CSP_SCRIPT_SRC = ("'self'",)
+# Optional: Other CSP directives for tighter control
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
+CSP_FONT_SRC = ("'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com")
+CSP_DEFAULT_SRC = ("'self'",)
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.

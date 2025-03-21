@@ -29,7 +29,14 @@ Python 3.11
 3. open web browser to http://127.0.0.1:8000/SEMRinterface/
 4. terminate using ctrl+break
 
+### Content Security Policy
 
+This app uses [django-csp](https://github.com/mozilla/django-csp) to enforce a secure Content Security Policy.
+
+By default, `unsafe-eval` is **not** allowed. This protects against XSS attacks.  
+If you're using third-party scripts or libraries that require `unsafe-eval`, enable it in `settings.py` — **but understand the security tradeoffs**.
+
+> For maximum security, refactor any libraries requiring `eval()` to safer alternatives.
 ### Notes
 
 The SEMRinterface in meant to run in full screen mode on a 1920 x 1080 resolution monitor. Responsive html is not
