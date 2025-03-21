@@ -89,7 +89,13 @@ SITE_ID = 1
 
 # Modify CsP to all unsafe-eval
 # CSP_SCRIPT_SRC = ("'self'", "'unsafe-eval'")
-CSP_SCRIPT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = (
+    "'self'",
+    "'unsafe-eval'",
+    "https://cdn.jsdelivr.net",
+    "https://fonts.googleapis.com",
+    "https://fonts.gstatic.com",
+)
 # Optional: Other CSP directives for tighter control
 CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
 CSP_FONT_SRC = ("'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com")
@@ -157,6 +163,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'csp.middleware.CSPMiddleware',  # ⬅️ This line is required
+
 ]
 
 ROOT_URLCONF = 'SEMRproject.urls'
