@@ -3,7 +3,7 @@ import os
 
 from SEMRproject import __VERSION__
 
-NAME = 'SimpleEMRSystem'
+NAME = 'Naya'
 VERSION = __VERSION__
 
 
